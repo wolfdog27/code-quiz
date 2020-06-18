@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="home.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Disney Challenge!</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>How well do you know Walt?</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Disney Quiz</h1>
+    <h2 class="time"></h2>
+    <div class="container">
+        <div id="question-container">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn btn1">Answer 1</button>
+                <button class="btn btn2">Answer 2</button>
+                <button class="btn btn3">Answer 3</button>
+                <button class="btn btn4">Answer 4</button>
+                <h4 id="feedback"></h4>
+            </div>
         </div>
-        <div class="card-body">
-              <img src="https://westgatecdn.com/2015/07/baby-mickey-mouse-pictures-mickey-mouse-disney-baby-photo-450x400-dcp-cpna013010.jpg" alt="Mickey Mouse">
-        </div>
-        <div class="card-footer">
-          <button id="play" class="btn">PLAY</button>
-        </div>
-      </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+    <div class="controls">
+        <button id="start-btn">Start</button>
+
+    </div>
+    <h3>Game Over</h3>
+    <script src="new.js"></script>
+</body>
 </html>

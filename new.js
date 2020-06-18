@@ -10,17 +10,16 @@ var answersDiv= document.querySelector("#answer-buttons")
 
 var userName = "";
 
-
-
 var score = 0
 var count =0
 var timeRemaining = 60
 var timeEl = document.querySelector(".time");
 
+
 // all questions and answers
 var myQuestions=[
     {
-        question:"What were the names of Ursula’s two pet eels?",
+        question:"What are the names of Ursula’s two pet eels?",
         ans1:"Key and Peele",
         ans2:"Flotsam and Jetsam",
         ans3:"Tom and Jerry",
@@ -42,6 +41,38 @@ var myQuestions=[
         ans3:"Tiny worries",
         ans4:"What was that?",
         correctAnswer:"No worries"
+    },
+    {
+        question:"Anna wants to build a...",
+        ans1:"Sand Castle",
+        ans2:"Snowman",
+        ans3:"Sandwhich",
+        ans4:"Smore",
+        correctAnswer:"Snowman"
+    },
+    {
+        question:"Lea Salonga voiced which two Disney princesses?",
+        ans1:"Mulan and Ariel",
+        ans2:"Ariel and Belle",
+        ans3:"Belle and Jasmine",
+        ans4:"Jasmine and Mulan",
+        correctAnswer:"Jasmine and Mulan"
+    },
+    {
+        question:"What year did Disneyland open?",
+        ans1:"1995",
+        ans2:"1945",
+        ans3:"1955",
+        ans4:"1965",
+        correctAnswer:"1955"
+    },
+    {
+        question:"Which Disney princess sings Almost There?",
+        ans1:"Princess Tiana",
+        ans2:"Princess Tia",
+        ans3:"Princess Tina",
+        ans4:"Princess Taco",
+        correctAnswer:"Princess Tiana"
     }
 ]
 // hide the questinsContainer
@@ -58,39 +89,50 @@ startBtn.addEventListener("click",function(){
 
 //display formula for question/answers
 function printQuestions(){
+// empty textcontent ""
+// if count<myQuestions.length {
 questionDiv.textContent= myQuestions[count].question
 answerBtn1.textContent= myQuestions[count].ans1
 answerBtn2.textContent= myQuestions[count].ans2
 answerBtn3.textContent= myQuestions[count].ans3
 answerBtn4.textContent= myQuestions[count].ans4
+// } else {
+    // Endgame Function
 }
+
+
+// function endgame {
+//     endgame
+// }
 
 // when clicked, go to next question
 answersDiv.addEventListener("click",function(){
     count ++;
-    if correctAnswer then print quesietons else  wrong
+    // if correctAnswer then print quesietons else  wrong
+    
+
 printQuestions()
 })
 
 answerBtn1.addEventListener("click", function(){
     var buttonSelector = answerBtn1.textContent
     console.log (buttonSelector)
-    printQuestions();
+
 })
 answerBtn2.addEventListener("click", function(){
     var buttonSelector = answerBtn2.textContent
     console.log (buttonSelector)
-    printQuestions();
+
 })
 answerBtn3.addEventListener("click", function(){
     var buttonSelector = answerBtn3.textContent
     console.log (buttonSelector)
-    printQuestions();
+
 })
 answerBtn4.addEventListener("click", function(){
     var buttonSelector = answerBtn4.textContent
     console.log (buttonSelector)
-    printQuestions();
+
 })
 
 //timer
@@ -106,23 +148,38 @@ function setTime() {
     }, 1000);
   }
 
+
+
 // function endGame {
     
 // }
   
-
+// Attempt
 //   var buttonSelector = document.querySelectorAll(".btn")
 //   // var userInput = btn.textContent
 //   console.log (buttonSelector)
 //   // console.log (userInput)
 //   count++;
 //   console.log(myQuestions[0].ans2, myQuestions[0].correctAnswer)
-  if (myQuestions[0].ans2===myQuestions[0].correctAnswer){
-      timeRemaining = timeRemaining+5
-  } else {
-      timeRemaining = timeRemaining-2
-  }
+//   if (myQuestions[0].ans2===myQuestions[0].correctAnswer){
+//       timeRemaining = timeRemaining+5
+//   } else {
+//       timeRemaining = timeRemaining-2
+//   }
 
+
+// for end to stringify THIS IS NOT MINE BELOW BUT WANTED TO SEE IF I COULD MAKE USE OF THIS
+
+// storedInitials.innerText = highScores[0].playerInitials;
+// storedScore.innerText = highScores[0].finalScore;
+
+// localStorage.setItem("score", JSON.stringify(highScores));
+
+// });
+
+// var dataStored = JSON.parse(localStorage.getItem("score"));
+// console.log(dataStored[0].playerInitials);
+// console.log(dataStored[0].finalScore);
 
 
 

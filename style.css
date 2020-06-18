@@ -41,3 +41,7 @@ h1 {
 #question-container{
   background-color: white;
 }
+
+h3 {
+  display:none;
+}
