@@ -8,13 +8,19 @@ var answerBtn3=document.querySelector(".btn3")
 var answerBtn4=document.querySelector(".btn4")
 var answersDiv= document.querySelector("#answer-buttons")
 
-var userName = "";
-
-var score = 0
-var count =0
-var timeRemaining = 60
 var timeEl = document.querySelector(".time");
+var formEl = document.querySelector(".form-group")
+var inputEl = document.querySelector(".usr")
+var highScoreEl = document.querySelector("#highScore")
 
+var questions = 0;
+var correctAnswer = "";
+var incorrectAnswer = "";
+
+var timeRemaining = 60;
+var score = 0;
+var userName = "";
+var userAr = JASON.parse(localStorage.getItem("user")) || [];
 
 // all questions and answers
 var myQuestions=[
@@ -75,9 +81,6 @@ var myQuestions=[
         correctAnswer:"Princess Tiana"
     }
 ]
-// hide the questinsContainer
-
-questionsContainer.style.display="none"
 
 // start button functions: start button goes away, buttons appear, clock starts
 startBtn.addEventListener("click",function(){
@@ -89,15 +92,11 @@ startBtn.addEventListener("click",function(){
 
 //display formula for question/answers
 function printQuestions(){
-// empty textcontent ""
-// if count<myQuestions.length {
-questionDiv.textContent= myQuestions[count].question
-answerBtn1.textContent= myQuestions[count].ans1
-answerBtn2.textContent= myQuestions[count].ans2
-answerBtn3.textContent= myQuestions[count].ans3
-answerBtn4.textContent= myQuestions[count].ans4
-// } else {
-    // Endgame Function
+    questionDiv.textContent= myQuestions[count].question
+    answerBtn1.textContent= myQuestions[count].ans1
+    answerBtn2.textContent= myQuestions[count].ans2
+    answerBtn3.textContent= myQuestions[count].ans3
+    answerBtn4.textContent= myQuestions[count].ans4
 }
 
 
@@ -166,20 +165,6 @@ function setTime() {
 //   } else {
 //       timeRemaining = timeRemaining-2
 //   }
-
-
-// for end to stringify THIS IS NOT MINE BELOW BUT WANTED TO SEE IF I COULD MAKE USE OF THIS
-
-// storedInitials.innerText = highScores[0].playerInitials;
-// storedScore.innerText = highScores[0].finalScore;
-
-// localStorage.setItem("score", JSON.stringify(highScores));
-
-// });
-
-// var dataStored = JSON.parse(localStorage.getItem("score"));
-// console.log(dataStored[0].playerInitials);
-// console.log(dataStored[0].finalScore);
 
 
 
