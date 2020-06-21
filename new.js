@@ -23,6 +23,8 @@ var score = 0;
 var userName = "";
 // var userAr = JASON.parse(localStorage.getItem("user")) || [];
 
+questionsContainer.style.display="none"
+
 // all questions and answers
 var myQuestions=[
     {
@@ -151,7 +153,7 @@ function setTime() {
   
       if(timeRemaining === 0) {
         clearInterval(timerInterval);
-        endGame();
+        // endGame();
       }
   
     }, 1000);
