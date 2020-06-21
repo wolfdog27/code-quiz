@@ -18,9 +18,10 @@ var correctAnswer = "";
 var incorrectAnswer = "";
 
 var timeRemaining = 60;
+var count = 0;
 var score = 0;
 var userName = "";
-var userAr = JASON.parse(localStorage.getItem("user")) || [];
+// var userAr = JASON.parse(localStorage.getItem("user")) || [];
 
 // all questions and answers
 var myQuestions=[
@@ -100,39 +101,47 @@ function printQuestions(){
 }
 
 
-// function endgame {
-//     endgame
-// }
+
 
 // when clicked, go to next question
 answersDiv.addEventListener("click",function(){
     count ++;
-    // if correctAnswer then print quesietons else  wrong
-    
-
 printQuestions()
 })
 
-answerBtn1.addEventListener("click", function(){
-    var buttonSelector = answerBtn1.textContent
-    console.log (buttonSelector)
+answerBtn1.addEventListener("click", function(event){
+    if (event.target.textContent === myQuestions[count].correctAnswer) {
+    timeRemaining +5;
+    } else {
+        answerBtn1.textContent = "incorrect"
+        timeRemaining -5;
+    }
+});
+answerBtn2.addEventListener("click", function(event){
+    if (event.target.textContent === myQuestions[count].correctAnswer) {
+    timeRemaining +5;
+    } else {
+        answerBtn2.textContent = "incorrect"
+        timeRemaining -5;
+    }
+});
+answerBtn3.addEventListener("click", function(event){
+    if (event.target.textContent === myQuestions[count].correctAnswer) {
+    timeRemaining +5;
+    } else {
+        answerBtn3.textContent = "incorrect"
+        timeRemaining -5;
+    }
+});
+answerBtn4.addEventListener("click", function(event){
+    if (event.target.textContent === myQuestions[count].correctAnswer) {
+    timeRemaining +5;
+    } else {
+        answerBtn4.textContent = "incorrect"
+        timeRemaining -5;
+    }
+});
 
-})
-answerBtn2.addEventListener("click", function(){
-    var buttonSelector = answerBtn2.textContent
-    console.log (buttonSelector)
-
-})
-answerBtn3.addEventListener("click", function(){
-    var buttonSelector = answerBtn3.textContent
-    console.log (buttonSelector)
-
-})
-answerBtn4.addEventListener("click", function(){
-    var buttonSelector = answerBtn4.textContent
-    console.log (buttonSelector)
-
-})
 
 //timer
 function setTime() {
@@ -142,56 +151,27 @@ function setTime() {
   
       if(timeRemaining === 0) {
         clearInterval(timerInterval);
+        endGame();
       }
   
     }, 1000);
   }
 
+//   EndGame Screen
+// function endGame () {
+//     clearInterval(timerInterval);
+//     score1 = timeRemaining;
+//     highScoreEl.textContent(score1);
 
-
-// function endGame {
-    
+//     formEl.addEventListener("submit", function (event){
+//         event.preventDefault
+//         var userId = {
+//         username: inputEl.value,
+//         score: score1 
+//         }
+//         userAr.push(userId);
+//         localStorage.setItem("user", JSON.stringify(userAr));
+//     })
 // }
-  
-// Attempt
-//   var buttonSelector = document.querySelectorAll(".btn")
-//   // var userInput = btn.textContent
-//   console.log (buttonSelector)
-//   // console.log (userInput)
-//   count++;
-//   console.log(myQuestions[0].ans2, myQuestions[0].correctAnswer)
-//   if (myQuestions[0].ans2===myQuestions[0].correctAnswer){
-//       timeRemaining = timeRemaining+5
-//   } else {
-//       timeRemaining = timeRemaining-2
-//   }
-
-
-
-// when then timer begins and asked a question
-// I think it needs to be an array of question and answers
-    // this will be randomized and continued with every guess
-
-
-// if correct - ask next quesiton - maybe add more time?
-//      if else statements
-// if incorrect - minus time - ask next question
-
-// reaches 0, game ends and go to score page
-// can save initals and score on score page
-
-// add button to play again?
-
-
-
-
-
-
-
-
-
-
-// timer function from class:
-
 
 
